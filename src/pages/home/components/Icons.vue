@@ -16,51 +16,13 @@
 <script>
   export default {
     name: "HomeIcons",
-    data(){
-      return {
-        iconList: [{
-          id: '0001',
-          imgUrl: '/static/icons_1.png',
-          desc: '景点门票'
-        }, {
-          id: '0002',
-          imgUrl: '/static/icons_2.png',
-          desc: '滑雪季'
-        }, {
-          id: '0003',
-          imgUrl: '/static/icons_3.png',
-          desc: '泡温泉'
-        }, {
-          id: '0004',
-          imgUrl: '/static/icons_4.png',
-          desc: '动植园'
-        }, {
-          id: '0006',
-          imgUrl: '/static/icons_1.png',
-          desc: '超过长度超过长度'
-        }, {
-          id: '0007',
-          imgUrl: '/static/icons_2.png',
-          desc: '泡温泉'
-        }, {
-          id: '0008',
-          imgUrl: '/static/icons_3.png',
-          desc: '动植园'
-        }, {
-          id: '0009',
-          imgUrl: '/static/icons_4.png',
-          desc: '一日游'
-        }, {
-          id: '0009',
-          imgUrl: '/static/icons_4.png',
-          desc: '一日游'
-        }]
-      }
+    props: {
+      list: Array
     },
     computed: {
       pages() {
         const pages = []
-        this.iconList.forEach((item, index) => {
+        this.list.forEach((item, index) => {
           const page = Math.floor(index / 8)
           if (!pages[page]) {
             //若功能板块超过8块，创建page[1] = []

@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img"  :src="item.imgUrl" alt="">
       </swiper-slide>
       <!-- Optional controls -->
@@ -12,26 +12,28 @@
 </template>
 
 <script>
-    export default {
-        name: "HomeSwiper",
-        data(){
-          return {
-            swiperOption: {
-              pagination: '.swiper-pagination',
-              loop: true,
-              autoplay: true
-            },
-            swiperList: [{
-              id: '0001',
-              imgUrl: '/static/swiper1.jpg'
-            },
-            {
-              id: '0002',
-              imgUrl: '/static/swiper2.jpg'
-            }]
-          }
+  export default {
+    name: "HomeSwiper",
+    props: {
+      list: Array
+    },
+    data(){
+      return {
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          loop: true,
+          autoplay: true
         }
+      }
+    },
+    computed: {
+      showSwiper(){
+        return this.list.length
+      }
     }
+  }
 </script>
 
 <style lang="stylus" scoped>
