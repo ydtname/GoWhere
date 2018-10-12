@@ -18,7 +18,8 @@
           return {
             swiperOption: {
               pagination: '.swiper-pagination',
-              loop: true
+              loop: true,
+              autoplay: true
             },
             swiperList: [{
               id: '0001',
@@ -39,7 +40,7 @@
   .wrapper
     width: 100%
     height: 0
-    padding-bottom: 56%
+    padding-bottom: 48%
     overflow: hidden
     background-color: #fff
     .swiper-img

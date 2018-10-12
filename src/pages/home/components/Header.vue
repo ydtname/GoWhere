@@ -21,7 +21,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import '~styles/varubkes.styl'
+  @import '~styles/varibles.styl'
   .header
     display: flex
     line-height: .86rem
