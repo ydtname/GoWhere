@@ -12,6 +12,7 @@ export default {
 
 <style>
 #app {
-
+  /*解决双击事件fastclick报错*/
+  touch-action: manipulation;
 }
 </style>
