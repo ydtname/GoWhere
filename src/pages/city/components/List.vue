@@ -7,18 +7,6 @@
           <div class="button-wrapper">
             <div class="button">广州</div>
           </div>
-          <div class="button-wrapper">
-            <div class="button">广州</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">广州</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">广州</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">广州</div>
-          </div>
         </div>
       </div>
 
