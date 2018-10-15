@@ -10,15 +10,20 @@
         </div>
       </div>
     </div>
-    <common-gallery
-      :imgs="galleryImgs"
-      v-show="showGallery"
-      @close="handleGalleryClose"></common-gallery>
+    <fade-animation>
+      <common-gallery
+        :imgs="galleryImgs"
+        v-show="showGallery"
+        @close="handleGalleryClose">
+      </common-gallery>
+    </fade-animation>
+
   </div>
 </template>
 
 <script>
   import CommonGallery from 'common/gallery/Gallery'
+  import FadeAnimation from 'common/fade/FadeAnimation'
   import {mapMutations} from 'vuex'
   export default {
     name: "DetailBanner",
@@ -28,7 +33,8 @@
       galleryImgs: Array
     },
     components: {
-      CommonGallery
+      CommonGallery,
+      FadeAnimation
     },
     data(){
       return {

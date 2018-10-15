@@ -7,6 +7,7 @@ import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from './store'
 import 'swiper/dist/css/swiper.css'
+import 'animate.css/animate.css'
 
 import 'styles/reset.css'
 import 'styles/border.css'
