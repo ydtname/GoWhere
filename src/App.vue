@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="[currentScroll]">
     <keep-alive>
       <router-view/>
     </keep-alive>
@@ -7,8 +7,12 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
-  name: 'App'
+  name: 'App',
+  computed: mapState({
+    currentScroll: 'scroll'
+  }),
 }
 </script>
 
@@ -16,5 +20,9 @@ export default {
 #app {
   /*解决双击事件fastclick报错*/
   touch-action: manipulation;
+}
+.stopScroll{
+  overflow: hidden;
+  height: 0;
 }
 </style>

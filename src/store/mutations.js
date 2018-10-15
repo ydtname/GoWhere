@@ -4,6 +4,14 @@ export default{
     try{
       localStorage.city = city
     }catch(e){}
-    localStorage.city = city
+  },
+  changeDetailID(state, ID){
+    state.detailID = ID
+    try{
+      localStorage.detailID = ID
+    }catch(e){}
+  },
+  changeScroll(state, val) {
+    state.scroll = val
   }
 }

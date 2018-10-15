@@ -6,7 +6,8 @@
                      tag="li"
                      v-for="item in list"
                      :key="item.id"
-                     :to="'/detail/' + item.id">
+                     :to="'/detail/' + item.id"
+                     @click.native="handleDetailClick(item.id)">
           <img :src="item.imgUrl" alt="" class="item-img">
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -19,10 +20,17 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
   export default {
     name: "HomeRecommend",
     props: {
       list: Array
+    },
+    methods:{
+      handleDetailClick(ID){
+        this.changeDetailID(ID)
+      },
+      ...mapMutations(['changeDetailID'])
     }
   }
 </script>

@@ -41,7 +41,6 @@ import { mapState } from 'vuex'
           .then(this.getHomeInfoSucc)
       },
       getHomeInfoSucc(res){
-        console.log(res)
         res = res.data
         if(res.ret && res.data){
           const data = res.data
@@ -54,7 +53,7 @@ import { mapState } from 'vuex'
       }
     },
     computed: mapState({
-      currentCity: 'city'
+      currentCity: 'city',
     }),
     mounted(){
       this.lastCity = this.currentCity

@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
   export default {
     name: "CommonGallery",
     props: {
@@ -39,7 +40,10 @@
     methods: {
       handleGalleryClick(){
         this.$emit('close')
-      }
+        document.documentElement.scrollTop = '0'
+        this.changeScroll('')
+      },
+      ...mapMutations(['changeScroll']),
     }
   }
 </script>
