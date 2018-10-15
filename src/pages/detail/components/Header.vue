@@ -68,6 +68,7 @@
       font-size .4rem
   .header-fixed
     position: fixed
+    z-index 1
     top 0
     right 0
     left 0
