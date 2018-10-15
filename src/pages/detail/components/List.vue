@@ -5,8 +5,9 @@
          :key="index"
     >
       <div class="item-title border-bottom">
-        <span class="item-title-icon"></span>
+        <span class="item-title-icon" v-if="item.children"></span>
         {{item.title}}
+        <div class="item-children-price" v-if="item.price">{{item.price}}</div>
       </div>
       <div class="item-children"
            v-if="item.children">
@@ -26,7 +27,6 @@
 </script>
 
 <style scoped lang="stylus">
-  @import '~styles/varibles.styl'
   .item-title
     line-height .8rem
     font-size .32rem
@@ -42,5 +42,10 @@
     margin-right: .1rem
     background-size: .4rem 3rem
   .item-children
-    padding 0 .2rem
+    padding 0 .55rem
+    .item-children-price
+      float right
+      color orange
+      font-size .35rem
+      font-weight 600
 </style>
