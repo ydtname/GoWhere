@@ -12,9 +12,9 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: ' https://ydtname.github.io',
         pathRewrite: {
-          '^/api': '/static/mock'
+          '^/api': '/dist/static/mock'
           // '^/api': ''
         }
       }
