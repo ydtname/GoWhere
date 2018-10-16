@@ -31,7 +31,7 @@
     },
     methods: {
       getCityInfo(){
-        axios.get('/api/city.json')
+        axios.get('https://ydtname.github.io/GoWhere/dist/static/mock/city.json')
           .then(this.handleGetCityInfoSucc)
       },
       handleGetCityInfoSucc(res){

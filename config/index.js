@@ -45,14 +45,6 @@ module.exports = {
   },
 
   build: {
-    proxyTable: {
-      '/api': {
-        target: 'https://ydtname.github.io/GoWhere',
-        pathRewrite: {
-          '^/api': '/dist/static/mock'
-        }
-      }
-    },
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

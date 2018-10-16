@@ -37,7 +37,7 @@ import { mapState } from 'vuex'
     },
     methods: {
       getHomeInfo(){
-        axios.get('/api/index.json?city=' + this.currentCity)
+        axios.get('https://ydtname.github.io/GoWhere/dist/static/mock/index.json?city=' + this.currentCity)
           .then(this.getHomeInfoSucc)
       },
       getHomeInfoSucc(res){
