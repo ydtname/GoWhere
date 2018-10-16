@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: ' https://ydtname.github.io',
+        target: ' https://ydtname.github.io/GoWhere',
         pathRewrite: {
           '^/api': '/dist/static/mock'
           // '^/api': ''
