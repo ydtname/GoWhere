@@ -50,7 +50,7 @@
       display inline-block
       width 1.65rem
       height .25rem
-      background url(/static/re-star-gold_13d50a5.png) left top/78px 12px no-repeat;
+      background url(https://ydtname.github.io/GoWhere/dist/static/re-star-gold_13d50a5.png) left top/78px 12px no-repeat;
     .info-comment-point
       color: orange
     .info-comment-number
