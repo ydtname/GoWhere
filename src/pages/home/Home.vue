@@ -65,7 +65,7 @@ import { mapState } from 'vuex'
         this.getHomeInfo()
       }
     }
-  }
+}
 </script>
 
 <style scoped>

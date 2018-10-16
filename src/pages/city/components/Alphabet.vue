@@ -5,7 +5,9 @@
       v-for="item in letters"
       :key="item"
       :ref="item"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
       @click="handleLetterClick">
       {{item}}
     </li>
@@ -29,7 +31,7 @@
     },
     data(){
       return {
-        // touchStatus: false
+        touchStatus: false,
         startY: 0,
         timer: null
       }
@@ -42,17 +44,25 @@
       handleLetterClick(e){
         this.$emit('change', e.target.innerText)
       },
-      handleTouchMove(e){
-        if(this.timer) {
-          clearTimeout(this.timer) //节流，清除上一个异步执行函数
-        }
-        this.timer = setTimeout(()=>{
-          const touchY = e.touches[0].clientY - 79
-          const index = Math.floor((touchY - this.startY) / 21)
-          if(index >= 0 && index < this.letters.length){
-            this.$emit('change', this.letters[index])
+      handleTouchStart(){
+        this.touchStatus = true
+      },
+      handleTouchEnd(){
+        this.touchStatus = false
+      },
+      handleTouchMove(e) {
+        if (this.touchStatus) {
+          if (this.timer) {
+            clearTimeout(this.timer) //节流，清除上一个异步执行函数
           }
-        }, 16)
+          this.timer = setTimeout(() => {
+            const touchY = e.touches[0].clientY - 79
+            const index = Math.floor((touchY - this.startY) / 21)
+            if (index >= 0 && index < this.letters.length) {
+              this.$emit('change', this.letters[index])
+            }
+          }, 16)
+        }
       },
     }
   }
@@ -71,7 +81,7 @@
     bottom: 0
     width: .4rem
     .item
-      line-height: .44rem
+      line-height: .38rem
       text-align: center
       color: $bgColor
 </style>
