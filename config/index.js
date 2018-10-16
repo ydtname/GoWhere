@@ -12,9 +12,9 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: ' https://ydtname.github.io/GoWhere',
+        target: 'http://localhost:8080',
         pathRewrite: {
-          '^/api': '/dist/static/mock'
+          '^/api': '/static/mock'
           // '^/api': ''
         }
       }
@@ -45,6 +45,14 @@ module.exports = {
   },
 
   build: {
+    proxyTable: {
+      '/api': {
+        target: 'https://ydtname.github.io/GoWhere',
+        pathRewrite: {
+          '^/api': '/dist/static/mock'
+        }
+      }
+    },
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
